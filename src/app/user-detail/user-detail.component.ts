@@ -35,6 +35,7 @@ export class UserDetailComponent implements OnInit {
        console.log(params); 
        this.profileId = params.id
     });
+    
     console.log(this.profileImage[this.profileId].image );
 
     this.loading = false;
@@ -73,7 +74,7 @@ export class UserDetailComponent implements OnInit {
           "Document Number": "S123-456-57-901-0",
           "Expiration Date": "/Date(1799712000000)/",
           "First Name": "NICK",
-          "Full Name": "NICK SAMPLE",
+          "Full Name": this.profileImage[this.profileId].name,
           "Given Name": "NICK",
           "Height": "5'-10\"",
           "Issue Date": "/Date(1564185600000)/",

@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 	},
 	{
 		id: 102,
-		name : 'vadivel tamilarasan',
+		name : 'Ajay sapre',
 		appointmentTime : '10.30 AM',
 		reason : 'Broken Pain',
 		medicalHistory : '',
