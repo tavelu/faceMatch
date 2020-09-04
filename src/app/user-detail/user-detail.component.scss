@@ -121,3 +121,92 @@
     width: calc(100% - 40px);
   }
 }
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 55;
+    background: #000;
+    opacity: 0.2;
+}
+
+
+svg {
+  width: 70px;
+    overflow: visible;
+    cursor: pointer;
+    position: absolute;
+    top: 35%;
+    left: 35%;
+    z-index: 99;
+}
+svg .loader-ring {
+  transform-origin: 50px 50px;
+  animation: 
+    starting-fill 0.5s forwards,
+    vary-loader-width 3s 0.5s linear infinite alternate,
+    spin 1.6s 0.2s linear infinite;
+}
+svg .loader-ring-overlay {
+  visibility: hidden;
+  transform-origin: 50px 50px;
+  animation: spin 1.6s 0.2s linear infinite;
+}
+.complete .loader-ring-overlay {
+  visibility: visible;
+  animation: 
+    complete-fill 0.5s linear forwards, 
+    spin 1.6s 0.2s linear infinite;
+}
+.complete .loader-ring {
+  animation: 
+    starting-fill 0.5s forwards,
+    vary-loader-width 3s 0.5s linear infinite alternate,
+    spin 1.6s 0.2s linear infinite, fade 0.1 0.5s linear forwards;
+}
+.complete svg {
+  animation: fade 0.2s 0.7s linear forwards;
+  transition: all 0s 0.9s;
+  cursor: initial;
+  pointer-events: none;
+}
+.hidden {
+  display: none !important;
+}
+@keyframes starting-fill {
+  to {
+    stroke-dashoffset: 270;
+  }
+}
+@keyframes vary-loader-width {
+  0% {
+    stroke-dashoffset: 270;
+  }
+  50% {
+    stroke-dashoffset: 170;
+  }
+  100% {
+    stroke-dashoffset: 275;
+  }
+}
+@keyframes complete-fill {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
