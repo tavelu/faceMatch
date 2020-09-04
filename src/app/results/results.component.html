@@ -1,0 +1,43 @@
+<div class='body column results'>
+
+    <div class='wrapper'>
+
+        <div class='row results_id_sig'>
+            <figure class='results_id'>
+                <img alt="idscango" class="profile" src="{{(this.state$ | async)['Photo']}}" />
+            </figure>
+        </div>
+        <div class='results_data'>
+
+            <div class='row'>
+                <div class='type'>Name</div>
+                <div class='data'>
+                    {{ (this.state$ | async)['Full Name']}}</div>
+            </div>
+            <div class='row'>
+                <div class='type'>Document Authentication</div>
+                <div class='data'>{{(this.state$ | async).Authentication}}</div>
+            </div>
+            <div class='row'>
+                <div class='type'>Liveness: </div>
+                <div class='data' [class.hide]="!(this.state$ | async).LivenessResult"[class.hide]="!(this.state$ | async).LivenessResult">
+                    {{((this.state$ | async).LivenessResult || {}).LivenessAssessment}} {{(this.state$ | async).ErrorCode}}{{ (this.state$ | async).Error}}
+                </div>
+                <div class="data" [class.hide]="!(this.state$ | async).Error">
+                    {{((this.state$ | async)).ErrorCode}}{{(this.state$ | async).Error}}
+                </div>
+            </div>
+            <div class='row'>
+                <div class='type'>Facial Score</div>
+                <div class='data'>{{(this.state$ | async).Score}}</div>
+            </div>
+
+        </div>
+
+        <a class='btn outline' [routerLink]="'/'">
+            <p class="buttonBgText">Home</p>
+        </a>
+
+    </div>
+
+</div>

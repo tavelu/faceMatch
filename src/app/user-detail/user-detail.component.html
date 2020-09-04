@@ -1,0 +1,62 @@
+<div class="user">
+    <!-- <img *ngIf="!!this.loading" alt='idscango' width="100" height="100" style="margin: 0 auto; " src='assets/images/loader.gif' /> -->
+    <div *ngIf="userData">
+        <div class="user-header">
+            <div class="user-avatar">
+                <img [src]="selfieBase64" />
+            </div>
+            <div class="user-basic-info">
+                <h3 class="user-fullname">Vadivel Tamilarasan</h3>
+                <div class="user-fullname">{{authenticateText}}</div>
+            </div>
+        </div>
+        <div class="user-info">
+            <span class="user-title">NAME : </span>
+            <span class="user-data">{{userData['Full Name']}}</span>
+        </div>
+        <div class="user-info">
+            <div class='user-title'>AUTHENTICATION :</div>
+            <div class='user-data'>{{userData.Authentication}}</div>
+        </div>
+
+        <div *ngIf="profileMatch">
+            <!-- <div *ngIf="profileMatch.IsMatch"> -->
+                <div class="user-info">
+                    <div class='user-title'>FACIAL SCORE :</div>
+                    <div class='user-data'>
+                        {{profileMatch.Score}}
+                    </div>
+                </div>
+                <div class="user-info">
+                    <div class='user-title'>IS MATCH :</div>
+                    <div class='user-data'>
+                        {{profileMatch.IsMatch}}
+                    </div>
+                <!-- </div> -->
+            </div>
+
+     <!--        <div *ngIf="profileMatch">
+                <div class="user-info">
+                    <div class='user-title'>LIVENESS :</div>
+                    <div class='user-data'>
+                        {{profileMatch.Score }}
+                    </div>
+                </div>
+                <div *ngIf="profileMatch.Error">
+                    <div class="user-info">
+                        <div class='user-title'>ERROR CODE:</div>
+                        <div class='user-data'>{{profileMatch.ErrorCode }}</div>
+                    </div>
+                    <div class="user-info" *ngIf="profileMatch.Error">
+                        <div class='user-title'>ERROR DESCRIPTION:</div>
+                        <div class='user-data'>{{profileMatch.Error }}</div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- <div class="user-info">{{profileMatch | json}}</div> -->
+        <div class="user-info">
+            <button class="user-remove" (click)="openFrontCamera()">Take Selfe</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="list-wrapper" ng-app="app" ng-controller="MainCtrl as ctrl">
+  <ul class="list">
+    <li *ngFor="let list of userData" class="list-item">
+	    <a routerLink="/detail/{{list.id}}">
+	      <div>
+	        <img src='assets/images/{{list.profilePic}}' class="list-item-image">
+	      </div>
+	      <div class="list-item-content">
+	        <h5>{{list.name}} </h5>
+	        <p>{{list.appointmentTime}}</p>
+			<p>{{list.reason}}</p>
+			<p>{{list.medicalHistory}}</p>
+	      </div>
+		</a>
+    </li>
+  </ul>
+</div>

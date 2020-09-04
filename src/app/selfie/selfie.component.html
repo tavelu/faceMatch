@@ -1,0 +1,35 @@
+<div class='body column capture_photo'>
+
+  <!--<pre>{{userData | json}}</pre>-->
+
+<img *ngIf="!!this.loading" alt='idscango' width="100" height="100" style="margin: 0 auto; " src='assets/images/loader.gif' />
+    
+    <div class='row wrapper description_container' *ngIf="!this.loading">
+        <p class='description'>Take a selfie image using the front camera of your device.</p>
+    </div>
+
+    <div class="capture_group" *ngIf="!this.loading">
+        <div class="userDetails">
+            <ul>
+                <li>
+                    <img src="assets/images/vadivel.jpg" />
+                </li>
+                <li>Name : Vadivel Tamilarasan</li>
+                <li>Age : 39</li>
+                <li>24 New Stree, velachery, chennai</li>
+            </ul>
+        </div>>
+        <div class='row wrapper capture_container'>
+            <img alt='idscango' class='capture' width="100" height="100" src='assets/images/illustration2@3x.png' />
+        </div>
+
+        <div class="wrapper column capture_controls">
+
+            <label class='btn' (click)="openFrontCamera()">
+                <p>Take selfie image</p>
+            </label>
+
+        </div>
+
+    </div>
+</div>
