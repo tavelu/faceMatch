@@ -74,7 +74,7 @@ export class UserDetailComponent implements OnInit {
           "Surname": "SAMPLE",
           "Authentication": "Attention"
         };
-        this.profilePic =  this.userData.Photo;
+        this.selfieBase64 =  this.userData.Photo;
       });
   }
   openFrontCamera() {
