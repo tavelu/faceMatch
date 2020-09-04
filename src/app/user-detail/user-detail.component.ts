@@ -18,7 +18,7 @@ export class UserDetailComponent implements OnInit {
   loading;
   userData;
   selfieImg;
-  public routeSub: Subscription;
+  public routeSub;
 
   constructor(@Inject(DOCUMENT) private document: Document, private NgZone: NgZone,  private acuantService: AcuantService, public router: Router,private sanitizer: DomSanitizer, private route: ActivatedRoute) {
     this.window = this.document.defaultView;
