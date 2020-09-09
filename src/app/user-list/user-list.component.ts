@@ -22,7 +22,7 @@ export class UserListComponent implements OnInit {
 		appointmentTime : '10.30 AM',
 		reason : 'Broken Pain',
 		medicalHistory : '',
-		profilePic: 'vadivel.jpg',
+		profilePic: 'Ajay.jpg',
 		status : 'completed'
 	},
 	{
